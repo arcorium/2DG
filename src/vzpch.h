@@ -13,4 +13,9 @@
 #include <unordered_map>
 #include <unordered_set>
 
+#include <assert.h>
+
+#include "vz/Vector.h"
+#include "vz/Core.h"
+
 #endif //INC_2DG_VZPCH_H
