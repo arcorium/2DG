@@ -8,14 +8,16 @@ namespace vz
 
     enum class Component : uint8_t
     {
-        NONE = 0,
-
+        None = 0,
+        Position,
+        Drawable,
+        SpriteSheet
     };
 
     class CBase
     {
     public:
-        CBase() : m_type(Component::NONE) {}
+        CBase() : m_type(Component::None) {}
         CBase(const Component& comp) : m_type(comp) {}
         virtual ~CBase() = default;
 

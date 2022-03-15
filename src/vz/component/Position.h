@@ -8,8 +8,7 @@ namespace vz
     class CPosition : public CBase
     {
     public:
-        CPosition() = default;
-        CPosition(const Component& comp);
+        CPosition();
         ~CPosition() override = default;
 
         void Read(std::stringstream &ss) override;
@@ -19,14 +18,15 @@ namespace vz
         void MoveTo(float x, float y);
 
         // Setter
-        void SetPosition(const sf::Vector2f& pos);
-        void SetPosition(float x, float y);
         void SetElevation(unsigned val);
 
         // Getter
         [[nodiscard]] const sf::Vector2f& GetPosition() const;
         [[nodiscard]] const sf::Vector2f& GetOldPosition() const;
         [[nodiscard]] unsigned GetElevation() const;
+
+    private:
+        void SavePosition();
 
     private:
         sf::Vector2f m_position;

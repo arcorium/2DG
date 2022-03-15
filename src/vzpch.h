@@ -13,4 +13,7 @@
 #include <type_traits>
 #include <cassert>
 
+// Local Static
+#include "vz/Core.h"
+
 #endif //INC_2DG_VZPCH_H

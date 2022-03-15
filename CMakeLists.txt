@@ -12,7 +12,7 @@ add_subdirectory(thirdparty/SFML)
 
 add_executable(2DG
         src/vz/Game.cpp src/vz/Game.h
-        src/vz/Core.h src/main.cpp src/vz/component/Component.h src/vz/component/Position.cpp src/vz/component/Position.h)
+        src/vz/Core.h src/main.cpp src/vz/component/Component.h src/vz/component/Position.cpp src/vz/component/Position.h src/vz/component/Drawable.cpp src/vz/component/Drawable.h src/vz/SpriteSheet.cpp src/vz/SpriteSheet.h src/vz/Manager.cpp src/vz/Manager.h)
 
 target_compile_definitions(2DG PRIVATE VZ_DEBUG)
 

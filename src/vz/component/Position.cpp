@@ -4,7 +4,8 @@
 namespace vz
 {
 
-    CPosition::CPosition(const Component &comp) : CBase(comp)
+    CPosition::CPosition()
+        : CBase(Component::Position), m_elevation(0)
     {
 
     }
@@ -16,37 +17,33 @@ namespace vz
 
     void CPosition::MoveBy(const sf::Vector2f &by)
     {
-
+        SavePosition();
+        m_position      += by;
     }
 
     void CPosition::MoveBy(float x, float y)
     {
-
+        SavePosition();
+        m_position.x += x;
+        m_position.y += y;
     }
 
     void CPosition::MoveTo(const sf::Vector2f &end)
     {
-
+        SavePosition();
+        m_position = end;
     }
 
     void CPosition::MoveTo(float x, float y)
     {
-
-    }
-
-    void CPosition::SetPosition(const sf::Vector2f &pos)
-    {
-
-    }
-
-    void CPosition::SetPosition(float x, float y)
-    {
-
+        SavePosition();
+        m_position.x = x;
+        m_position.y = y;
     }
 
     void CPosition::SetElevation(unsigned int val)
     {
-
+        m_elevation = val;
     }
 
     const sf::Vector2f& CPosition::GetPosition() const
@@ -62,5 +59,11 @@ namespace vz
     unsigned CPosition::GetElevation() const
     {
         return m_elevation;
+    }
+
+    void CPosition::SavePosition()
+    {
+        m_oldPosition.x = m_position.x;
+        m_oldPosition.y = m_position.y;
     }
 }
