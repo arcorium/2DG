@@ -1,32 +1,29 @@
 #ifndef INC_2DG_GAME_H
 #define INC_2DG_GAME_H
 
-//#include "Window.h"
-#include <GLFW/glfw3.h>
+namespace vz {
+    class Game {
 
-class Game
-{
-//    Window m_window;
-    float m_dt;
+    public:
+        Game();
 
-    // Function Callback
-    GLFWframebuffersizefun m_frameBufferCallback;
+        void Start();
 
-public:
-    Game();
+    private:
+        void Cleanup();
 
-    void Start();
-private:
-    void Cleanup();
+        void Run();
 
-    void Run();
+        bool Init();
 
-    bool Init();
-    void Clear();
-    void Render();
-    void Draw();
-    void Update(float dt);
-};
+        void Clear();
 
+        void Render();
+
+        void Draw();
+
+        void Update(float dt);
+    };
+}
 
 #endif //INC_2DG_GAME_H
