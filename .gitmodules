@@ -2,3 +2,6 @@
 [submodule "thirdparty/glfw"]
 	path = thirdparty/glfw
 	url = https://github.com/glfw/glfw
+[submodule "thirdparty/SFML"]
+	path = thirdparty/SFML
+	url = https://github.com/SFML/SFML.git
